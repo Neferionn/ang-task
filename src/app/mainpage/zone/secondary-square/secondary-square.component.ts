@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-secondary-square',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./secondary-square.component.scss']
 })
 export class SecondarySquareComponent implements OnInit {
-
+  @Input() defaultSku!: string;
+  @Input() sku!: string;
   constructor() { }
 
   ngOnInit(): void {

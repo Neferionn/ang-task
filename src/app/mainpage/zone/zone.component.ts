@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NewThings, Zone } from '../mainpage.component';
+import {Component, Input, OnInit} from '@angular/core';
+import {NewThings, Zone} from '../mainpage.component';
 
 @Component({
   selector: 'app-zone',
@@ -8,20 +8,27 @@ import { NewThings, Zone } from '../mainpage.component';
 })
 export class ZoneComponent implements OnInit {
   @Input() zone!: Zone;
-  list: { [id: number]: [] };
+  list: [NewThings[]];
 
   constructor() {
-    this.list = {};
+    // @ts-ignore
+    this.list = [];
   }
 
   ngOnInit(): void {
-    console.log(this.zone);
-    // @ts-ignore
-    for (let thing: NewThings of this.zone.things) {
-      // console.log(this.list[thing.id] === undefined);
-      if (this.list[thing.id] === undefined) {
-        // this.list[thing.id].push(thing.id);
+    for (const thing of this.zone.things) {
+      if (thing.joinedWith === null) {
+        this.list.push([thing]);
       }
     }
+    for (const thing of this.zone.things) {
+      if (thing.joinedWith !== null) {
+        const lis = this.list.find(l => l[0].id === thing.joinedWith);
+        if (lis !== undefined) {
+          lis.push(thing);
+        }
+      }
+    }
+    console.log(this.list);
   }
 }

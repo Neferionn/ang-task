@@ -1,12 +1,23 @@
 .zone {
-  padding: 20px;
+  padding: 5px;
   color: white;
-  margin-top: 15px;
   .zoneTitle {
     padding: 5px;
-    font-size: 2rem;
+    font-size: 1.6rem;
+    margin-left : 20px;
   }
   .zoneListing {
     display: flex;
+    flex-wrap: wrap;
+    span{
+      padding-bottom:4px;
+      span {
+        display: flex;
+        span {
+        }
+      }
+    }
   }
 }
+
+

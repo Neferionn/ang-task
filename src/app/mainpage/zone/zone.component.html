@@ -1,10 +1,19 @@
 <div class="zone">
   <div class="zoneTitle">{{zone.title}} </div>
   <div class="zoneListing">
-
-<!--    <app-primary-square></app-primary-square>-->
-<!--    <app-secondary-square></app-secondary-square>-->
-
+    <span *ngFor="let l of list">
+      <span *ngIf="l.length !== 1">
+        <span *ngFor="let el of l; let i = index">
+          <app-primary-square *ngIf="i === 0" [sku]="el.sku" [defaultSku]="el.defaultSku" [color]="(el.id == 2861 || el.id == 2970 ) ? ((el.id == 2861) ? 'orange' : 'red' ) : 'yellow' "></app-primary-square>
+          <app-secondary-square *ngIf="i > 0" [sku]="el.sku" [defaultSku]="el.defaultSku"></app-secondary-square>
+        </span>
+      </span>
+    </span>
+    <span *ngFor="let l of list" >
+      <span *ngIf="l.length === 1">
+        <app-primary-square [sku]="l[0].sku" [defaultSku]="l[0].defaultSku" [color]="(l[0].id == 2861 || l[0].id == 2970 ) ? ((l[0].id == 2861) ? 'orange' : 'red' ) : 'yellow' "></app-primary-square>
+      </span>
+    </span>
   </div>
 </div>
 
