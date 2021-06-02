@@ -1,0 +1,12 @@
+.zone {
+  padding: 20px;
+  color: white;
+  margin-top: 15px;
+  .zoneTitle {
+    padding: 5px;
+    font-size: 2rem;
+  }
+  .zoneListing {
+    display: flex;
+  }
+}

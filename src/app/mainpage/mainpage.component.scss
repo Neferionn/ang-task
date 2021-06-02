@@ -1,0 +1,27 @@
+.container {
+  margin: 0;
+  padding: 0;
+  background-color: #19263b;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .testData {
+    color: white;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    table {
+      color: green;
+
+      thead {
+        tr {
+          margin-left: 20px;
+          border: 2px solid red;
+        }
+      }
+    }
+  }
+}

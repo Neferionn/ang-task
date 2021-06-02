@@ -1,0 +1,32 @@
+.secondary-square {
+  width: 140px;
+  background-color: #2b4e87;
+  height: 70px;
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-left: 10px;
+
+  .chain {
+    width: 10px;
+    background-color: #274880;
+    height: 45px;
+    margin-left: -10px;
+    align-self: center;
+  }
+
+  .defaultSku {
+    font-size: 2rem;
+    align-self: center;
+    text-align: center;
+    padding-left: 20px;
+    align-content: center;
+  }
+  .sku {
+    font-size: 1rem;
+    align-self: right;
+    padding-right: 8px;
+    padding-top: 8px;
+  }
+}
